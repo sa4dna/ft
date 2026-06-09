@@ -520,7 +520,7 @@
     }
 
     .person.extinct .label::after {
-      content: "منقرض";
+      content: "درج";
       display: inline-block;
       margin-right: 7px;
       color: #8a473d;
@@ -760,7 +760,7 @@
 
         <div class="field">
           <label for="familyName">عنوان الشجرة</label>
-          <input id="familyName" type="text" value="ال مخلف" autocomplete="off">
+          <input id="familyName" type="text" value="ال فلان" autocomplete="off">
         </div>
 
         <div class="two">
@@ -882,7 +882,7 @@
       </div>
 
       <div class="stage-shell">
-        <header id="title" class="family-title">ال مخلف</header>
+        <header id="title" class="family-title">ال فلان</header>
         <div id="canvasWrap" class="canvas-wrap">
           <div id="canvas" class="canvas">
             <svg id="links" class="links"></svg>
@@ -902,26 +902,26 @@
     const isReadOnlyLink = params.get("view") === "1";
 
     const starterTree = {
-      familyName: "ال مخلف",
+      familyName: "ال فلان",
       creatorName: "باحث العائلة",
       creationDate: "1447 هـ",
       contactInfo: "للتواصل: example@email.com",
       selectedId: "root",
       viewMode: false,
       people: {
-        root: person("root", "ال مخلف", null, ["t1", "t2", "t3"], "1280 هـ", "1352 هـ", "موطن العائلة", "الجد الأكبر الذي تبدأ منه السلالة الأبوية.", "#b99b59", "active", "confirmed"),
-        t1: person("t1", "الثوابت", "root", ["a1", "a2", "a3", "a4", "a5", "a6", "a7"], "1310 هـ", "", "", "الجيل التالي بعد الجد الأكبر.", "#a9c99b", "active", "tested"),
-        t2: person("t2", "الطنون", "root", ["b1", "b2", "b3", "b4", "b5", "b6"], "1314 هـ", "", "", "فرع رئيسي من أبناء الجد.", "#a9c99b", "active", "none"),
-        t3: person("t3", "الموالك", "root", ["c1", "c2", "c3", "c4", "c5"], "1322 هـ", "", "", "فرع رئيسي من أبناء الجد.", "#a9c99b", "active", "none"),
-        a1: person("a1", "الخيانية", "t1"), a2: person("a2", "الرشدان", "t1"),
-        a3: person("a3", "الصعافقة", "t1"), a4: person("a4", "المحمد", "t1"),
-        a5: person("a5", "المهاملة", "t1"), a6: person("a6", "التماري", "t1"),
-        a7: person("a7", "الشبّع", "t1"), b1: person("b1", "الشدوبين", "t2"),
-        b2: person("b2", "الصيره", "t2"), b3: person("b3", "العوضي", "t2"),
-        b4: person("b4", "القروف", "t2"), b5: person("b5", "عرماني", "t2"),
-        b6: person("b6", "الخزي", "t2"), c1: person("c1", "الزعابلة", "t3"),
-        c2: person("c2", "الشرفا", "t3"), c3: person("c3", "القرص", "t3"),
-        c4: person("c4", "الحفيري", "t3"), c5: person("c5", "الوبران", "t3")
+        root: person("root", "ال فلان", null, ["t1", "t2", "t3"], "1280 هـ", "1352 هـ", "موطن العائلة", "الجد الأكبر الذي تبدأ منه السلالة الأبوية.", "#b99b59", "active", "confirmed"),
+        t1: person("t1", "جد ١", "root", ["a1", "a2", "a3", "a4", "a5", "a6", "a7"], "1310 هـ", "", "", "الجيل التالي بعد الجد الأكبر.", "#a9c99b", "active", "tested"),
+        t2: person("t2", "جد ٢", "root", ["b1", "b2", "b3", "b4", "b5", "b6"], "1314 هـ", "", "", "فرع رئيسي من أبناء الجد.", "#a9c99b", "active", "none"),
+        t3: person("t3", "جد ٣", "root", ["c1", "c2", "c3", "c4", "c5"], "1322 هـ", "", "", "فرع رئيسي من أبناء الجد.", "#a9c99b", "active", "none"),
+        a1: person("a1", "ابن ١", "t1"), a2: person("a2", "ابن ٤", "t1"),
+        a3: person("a3", "ابن ٢", "t1"), a4: person("a4", "ابن ٥", "t1"),
+        a5: person("a5", "ابن ٣", "t1"), a6: person("a6", "ابن ٦", "t1"),
+        a7: person("a7", "ابن ٧", "t1"), b1: person("b1", "ابن", "t2"),
+        b2: person("b2", "ابن", "t2"), b3: person("b3", "ابن", "t2"),
+        b4: person("b4", "ابن", "t2"), b5: person("b5", "ابن", "t2"),
+        b6: person("b6", "ابن", "t2"), c1: person("c1", "ابن", "t3"),
+        c2: person("c2", "ابن", "t3"), c3: person("c3", "ابن", "t3"),
+        c4: person("c4", "ابن", "t3"), c5: person("c5", "ابن", "t3")
       }
     };
 
@@ -1203,7 +1203,7 @@
 
     function renderMeta() {
       const parts = [
-        state.creatorName ? `<strong>المنشئ:</strong> ${escapeHtml(state.creatorName)}` : "",
+        state.creatorName ? `<strong>إعداد:</strong> ${escapeHtml(state.creatorName)}` : "",
         state.creationDate ? `<strong>تاريخ الإنشاء:</strong> ${escapeHtml(state.creationDate)}` : "",
         state.contactInfo ? `<strong>التواصل:</strong> ${escapeHtml(state.contactInfo)}` : ""
       ].filter(Boolean);
